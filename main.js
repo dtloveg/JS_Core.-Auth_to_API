@@ -3,10 +3,12 @@ const textInput = searchInput.querySelector('.wrapper__text')
 const autocomLists = searchInput.querySelector('.wrapper__autocom-lists')
 const container = document.querySelector('.container')
 
+const debouncedGetRepo = debounce(getRepo, 500);
+
   textInput.onkeyup = (e) => {
     let userData = e.target.value;    
     if(userData) {  
-        debounce(getRepo(userData), 500)
+        debouncedGetRepo(userData);
         } else {
         autocomLists.classList.remove('active')
         }       
