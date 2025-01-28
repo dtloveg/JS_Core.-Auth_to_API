@@ -6,7 +6,7 @@ const container = document.querySelector('.container')
 const debouncedGetRepo = debounce(getRepo, 500);
 
   textInput.onkeyup = (e) => {
-    let userData = e.target.value;    
+    let userData = e.target.value.trim();    
     if(userData) {  
         debouncedGetRepo(userData);
         } else {
